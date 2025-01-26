@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kinoo Lab Clinic - Total Blood Count Report</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <h1>Kinoo Lab Clinic</h1>
+        <h2>Total Blood Count Report</h2>
+        <form id="reportForm">
+            <div class="form-group">
+                <label for="patientName">Patient Name:</label>
+                <input type="text" id="patientName" name="patientName" required>
+            </div>
+            <div class="form-group">
+                <label for="date">Date:</label>
+                <input type="date" id="date" name="date" required>
+            </div>
+
+            <h3>Test Results</h3>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Test</th>
+                        <th>Result</th>
+                        <th>Units</th>
+                        <th>Normal Range</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <!-- WBC -->
+                    <tr>
+                        <td>WBC</td>
+                        <td><input type="text" id="wbc" name="wbc" required></td>
+                        <td>10^P/L</td>
+                        <td>4.0 – 10.0</td>
+                    </tr>
+                    <!-- RBC -->
+                    <tr>
+                        <td>RBC</td>
+                        <td><input type="text" id="rbc" name="rbc" required></td>
+                        <td>10^12/L</td>
+                        <td>3.50 – 5.50</td>
+                    </tr>
+                    <!-- HB -->
+                    <tr>
+                        <td>HB</td>
+                        <td><input type="text" id="hb" name="hb" required></td>
+                        <td>g/dL</td>
+                        <td>12.0 – 18.0</td>
+                    </tr>
+                    <!-- PCV -->
+                    <tr>
+                        <td>PCV</td>
+                        <td><input type="text" id="pcv" name="pcv" required></td>
+                        <td>%</td>
+                        <td>37.0 – 54.0</td>
+                    </tr>
+                    <!-- MCV -->
+                    <tr>
+                        <td>MCV</td>
+                        <td><input type="text" id="mcv" name="mcv" required></td>
+                        <td>Fl</td>
+                        <td>80.0 – 100.0</td>
+                    </tr>
+                    <!-- MCH -->
+                    <tr>
+                        <td>MCH</td>
+                        <td><input type="text" id="mch" name="mch" required></td>
+                        <td>pg</td>
+                        <td>27.0 – 34.0</td>
+                    </tr>
+                    <!-- MCHC -->
+                    <tr>
+                        <td>MCHC</td>
+                        <td><input type="text" id="mchc" name="mchc" required></td>
+                        <td>g/dL</td>
+                        <td>32.0 – 36.0</td>
+                    </tr>
+                    <!-- PLATELETS -->
+                    <tr>
+                        <td>PLATELETS</td>
+                        <td><input type="text" id="platelets" name="platelets" required></td>
+                        <td>10^9/L</td>
+                        <td>150 – 450</td>
+                    </tr>
+                    <!-- NEUTROPHILS -->
+                    <tr>
+                        <td>NEUTROPHILS</td>
+                        <td><input type="text" id="neutrophils" name="neutrophils" required></td>
+                        <td>%</td>
+                        <td>40 – 60</td>
+                    </tr>
+                    <!-- LYMPHOCYTES -->
+                    <tr>
+                        <td>LYMPHOCYTES</td>
+                        <td><input type="text" id="lymphocytes" name="lymphocytes" required></td>
+                        <td>%</td>
+                        <td>20 – 40</td>
+                    </tr>
+                    <!-- BASOPHILS -->
+                    <tr>
+                        <td>BASOPHILS</td>
+                        <td><input type="text" id="basophils" name="basophils" required></td>
+                        <td>%</td>
+                        <td>0 – 1</td>
+                    </tr>
+                    <!-- MONOCYTES -->
+                    <tr>
+                        <td>MONOCYTES</td>
+                        <td><input type="text" id="monocytes" name="monocytes" required></td>
+                        <td>%</td>
+                        <td>2 – 10</td>
+                    </tr>
+                    <!-- EASONIPHIL -->
+                    <tr>
+                        <td>EASONIPHIL</td>
+                        <td><input type="text" id="easoniphil" name="easoniphil" required></td>
+                        <td>%</td>
+                        <td>0 – 6</td>
+                    </tr>
+                    <!-- ESR -->
+                    <tr>
+                        <td>ESR</td>
+                        <td><input type="text" id="esr" name="esr" required></td>
+                        <td>mm/hr</td>
+                        <td>0 – 9</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <button type="button" onclick="saveAndGeneratePDF()">Save & Generate PDF</button>
+        </form>
+    </div>
+
+    <!-- jsPDF Library -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
